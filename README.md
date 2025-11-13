@@ -1,4 +1,4 @@
-📦 pedido-api — API de Gerenciamento de Pedidos (Java + Spring Boot)
+📦 pedido-api – API de Gerenciamento de Pedidos (Java + Spring Boot)
 
 
 
@@ -7,69 +7,144 @@
 
 
 
-API REST desenvolvida com Java Spring Boot para gerenciamento de pedidos.
-Projeto criado com foco em boas práticas, arquitetura limpa, separação de camadas e código preparado para expansão.
 
-Ideal para estudos, demonstrações profissionais e práticas de mercado.
 
-🚀 Tecnologias utilizadas
+🏗 Arquitetura da Aplicação
 
-Java 17+
+A API segue o padrão MVC + Service Layer, garantindo organização, testabilidade e separação clara das responsabilidades.
 
-Spring Boot (Web, Validation)
+📌 Diagrama da Arquitetura
+<img src="https://i.imgur.com/VB0f1Bv.png" width="450">
 
-Maven
 
-JUnit / Mockito
+🚀 Tecnologias Utilizadas
+Tecnologia	Descrição
+☕ Java 17+	Linguagem principal
+🍃 Spring Boot	Framework para criação da API
+📦 Maven	Gerenciador de dependências
+🧪 JUnit / Mockito	Testes automatizados
+🐙 Git & GitHub	Versionamento
+🏗 Arquitetura MVC	Organização das camadas
 
-Git & GitHub
 
-Arquitetura MVC (Controller → Service → Repository → Model)
-
-🧱 Arquitetura do Projeto
-
+📁 Estrutura do Projeto
 src/main/java/com/bruno/pedido/api
- ├── controller     # Endpoints REST (PedidoController)
+ ├── controller     # Endpoints REST
  ├── model          # Entidade Pedido
  ├── repository     # Interface PedidoRepository
- └── service        # Regras de negócio (PedidoService)
+ └── service        # Regras de negócio
 
-📌 Funcionalidades
+📌 Endpoints da API
 
-✔ Listar pedidos
+Todos os endpoints seguem o padrão REST e retornam JSON.
 
-✔ Buscar pedido por ID
-
-✔ Criar novo pedido
-
-✔ Atualizar pedido existente
-
-✔ Deletar pedido
-
-🔗 Endpoints principais
-1️⃣ Listar todos os pedidos
+🔎 1. Listar todos os pedidos
 
 GET /pedidos
 
-2️⃣ Buscar pedido por ID
+Resposta:
+
+[
+  {
+    "id": 1,
+    "descricao": "Notebook Lenovo",
+    "valor": 4200.00
+  },
+  {
+    "id": 2,
+    "descricao": "Mouse Gamer",
+    "valor": 199.90
+  }
+]
+
+🔎 2. Buscar pedido por ID
 
 GET /pedidos/{id}
 
-Exemplo de resposta:
+Resposta:
 
 {
   "id": 1,
   "descricao": "Notebook Lenovo",
-  "valor": 4200.0
+  "valor": 4200.00
 }
 
-3️⃣ Criar pedido
+🆕 3. Criar pedido
 
 POST /pedidos
 
-Body exemplo:
+Body:
 
 {
-  "descricao": "Mouse Gamer",
-  "valor": 199.90
+  "descricao": "Teclado Mecânico",
+  "valor": 350.00
 }
+
+
+Resposta HTTP 201:
+
+{
+  "id": 3,
+  "descricao": "Teclado Mecânico",
+  "valor": 350.00
+}
+
+🔄 4. Atualizar pedido
+
+PUT /pedidos/{id}
+
+Body:
+
+{
+  "descricao": "Teclado Mecânico RGB",
+  "valor": 420.00
+}
+
+❌ 5. Deletar pedido
+
+DELETE /pedidos/{id}
+
+Resposta HTTP 204: No content
+
+🛠 Como rodar o projeto localmente
+1️⃣ Clonar o repositório
+git clone https://github.com/BrunoApMarques/pedido-api.git
+cd pedido-api
+
+2️⃣ Executar com Maven
+mvn spring-boot:run
+
+3️⃣ Acessar a API
+http://localhost:8080/pedidos
+
+🧪 Testes Automatizados
+
+Os testes utilizam:
+
+✔ JUnit 5
+✔ Mockito
+✔ Testes unitários da camada Service e Controller
+
+📈 Pipeline de CI (GitHub Actions)
+
+Badge ilustrativa (podemos ativar o workflow depois):
+
+🗺 Roadmap (Próximos passos)
+
+Adicionar banco H2
+
+Criar DTOs para validação
+
+Adicionar Swagger/OpenAPI
+
+Criar Dockerfile
+
+Melhorar testes
+
+Implementar tratativa global de exceções
+
+👨‍💻 Autor
+
+Bruno Marques
+Desenvolvedor Back-end Java | Spring Boot | APIs REST
+🔗 GitHub: https://github.com/BrunoApMarques
