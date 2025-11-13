@@ -27,33 +27,23 @@ Git & GitHub
 Arquitetura MVC (Controller → Service → Repository → Model)
 
 🧱 Arquitetura do Projeto
+
 src/main/java/com/bruno/pedido/api
  ├── controller     # Endpoints REST (PedidoController)
  ├── model          # Entidade Pedido
  ├── repository     # Interface PedidoRepository
  └── service        # Regras de negócio (PedidoService)
 
-
-Princípios aplicados:
-
-SOLID
-
-Separação clara de responsabilidades
-
-DTOs para comunicação (quando necessário)
-
-Controllers enxutos
-
-Services contendo regra de negócio
-
-Repository para persistência (padrão Repository)
-
 📌 Funcionalidades
 
 ✔ Listar pedidos
+
 ✔ Buscar pedido por ID
+
 ✔ Criar novo pedido
+
 ✔ Atualizar pedido existente
+
 ✔ Deletar pedido
 
 🔗 Endpoints principais
@@ -76,57 +66,10 @@ Exemplo de resposta:
 3️⃣ Criar pedido
 
 POST /pedidos
-Body:
+
+Body exemplo:
 
 {
   "descricao": "Mouse Gamer",
   "valor": 199.90
 }
-
-4️⃣ Atualizar pedido
-
-PUT /pedidos/{id}
-Body:
-
-{
-  "descricao": "Mouse Gamer RGB",
-  "valor": 249.90
-}
-
-5️⃣ Deletar pedido
-
-DELETE /pedidos/{id}
-
-🛠️ Como rodar o projeto localmente
-1. Clonar o repositório
-git clone https://github.com/BrunoApMarques/pedido-api.git
-cd pedido-api
-
-2. Executar com Maven
-mvn spring-boot:run
-
-
-Ou rodar pela IDE (IntelliJ/Eclipse) usando a classe principal.
-
-3. Acessar os endpoints
-http://localhost:8080/pedidos
-
-📚 Futuras evoluções (roadmap)
-
-Implementar banco H2
-
-Criar validações com Bean Validation
-
-Adicionar testes automatizados
-
-Documentação Swagger/OpenAPI
-
-Criar DTOs específicos
-
-Preparar para Docker
-
-👨‍💻 Autor
-
-Bruno Marques
-Desenvolvedor Back-end Java | Spring Boot | APIs REST
-GitHub: https://github.com/BrunoApMarques
