@@ -1,22 +1,5 @@
 📦 pedido-api – API de Gerenciamento de Pedidos (Java + Spring Boot)
 
-
-
-
-
-
-
-
-
-
-🏗 Arquitetura da Aplicação
-
-A API segue o padrão MVC + Service Layer, garantindo organização, testabilidade e separação clara das responsabilidades.
-
-📌 Diagrama da Arquitetura
-<img src="https://i.imgur.com/VB0f1Bv.png" width="450">
-
-
 🚀 Tecnologias Utilizadas
 Tecnologia	Descrição
 ☕ Java 17+	Linguagem principal
@@ -44,6 +27,7 @@ GET /pedidos
 
 Resposta:
 
+
 [
   {
     "id": 1,
@@ -57,11 +41,13 @@ Resposta:
   }
 ]
 
+
 🔎 2. Buscar pedido por ID
 
 GET /pedidos/{id}
 
 Resposta:
+
 
 {
   "id": 1,
@@ -75,6 +61,7 @@ POST /pedidos
 
 Body:
 
+
 {
   "descricao": "Teclado Mecânico",
   "valor": 350.00
@@ -82,6 +69,7 @@ Body:
 
 
 Resposta HTTP 201:
+
 
 {
   "id": 3,
@@ -94,6 +82,7 @@ Resposta HTTP 201:
 PUT /pedidos/{id}
 
 Body:
+
 
 {
   "descricao": "Teclado Mecânico RGB",
