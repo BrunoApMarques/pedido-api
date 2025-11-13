@@ -1,3 +1,17 @@
+📦 pedido-api — API de Gerenciamento de Pedidos (Java + Spring Boot)
+
+
+
+
+
+
+
+
+API REST desenvolvida com Java Spring Boot para gerenciamento de pedidos.
+Projeto criado com foco em boas práticas, arquitetura limpa, separação de camadas e código preparado para expansão.
+
+Ideal para estudos, demonstrações profissionais e práticas de mercado.
+
 🚀 Tecnologias utilizadas
 
 Java 17+
@@ -46,13 +60,12 @@ Repository para persistência (padrão Repository)
 1️⃣ Listar todos os pedidos
 
 GET /pedidos
-Retorna a lista completa de pedidos cadastrados.
 
 2️⃣ Buscar pedido por ID
 
 GET /pedidos/{id}
 
-Response exemplo:
+Exemplo de resposta:
 
 {
   "id": 1,
@@ -89,35 +102,31 @@ DELETE /pedidos/{id}
 git clone https://github.com/BrunoApMarques/pedido-api.git
 cd pedido-api
 
-2. Rodar com Maven
+2. Executar com Maven
 mvn spring-boot:run
 
 
-Ou pela IDE (IntelliJ/Eclipse), rodando a classe principal.
+Ou rodar pela IDE (IntelliJ/Eclipse) usando a classe principal.
 
 3. Acessar os endpoints
 http://localhost:8080/pedidos
 
 📚 Futuras evoluções (roadmap)
 
-Implementar banco de dados H2
+Implementar banco H2
 
 Criar validações com Bean Validation
 
 Adicionar testes automatizados
 
-Implementar Swagger/OpenAPI
+Documentação Swagger/OpenAPI
 
-Criar DTOs específicos para requests/responses
+Criar DTOs específicos
 
-Preparar a API para Docker
+Preparar para Docker
 
 👨‍💻 Autor
 
 Bruno Marques
 Desenvolvedor Back-end Java | Spring Boot | APIs REST
 GitHub: https://github.com/BrunoApMarques
-
-LinkedIn: https://linkedin.com/in/bruno-marques-pcd-7a15b8107
-
-📌 Observação: projeto foi criado para praticar conceitos de APIs REST com Spring Boot, camadas separadas (controller → service → repository), testes automatizados e versionamento com Git.
