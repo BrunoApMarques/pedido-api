@@ -1,88 +1,122 @@
-📦 pedido-api
+🚀 Tecnologias utilizadas
 
-API REST desenvolvida em Java com Spring Boot para gerenciamento de pedidos.  
-Projeto criado para estudo e demonstração de boas práticas de backend (controllers enxutos, service com regras de negócio e repository separado).
+Java 17+
 
-🚀 Tecnologias
- Java 17 (ou versão que estiver usando)
- Spring Boot
- Maven
- JUnit 5 e Mockito (testes)
- Docker (possível containerização)
- Git / GitHub
+Spring Boot (Web, Validation)
 
-📁 Estrutura do projeto
+Maven
 
+JUnit / Mockito
+
+Git & GitHub
+
+Arquitetura MVC (Controller → Service → Repository → Model)
+
+🧱 Arquitetura do Projeto
 src/main/java/com/bruno/pedido/api
- ├── controller     * endpoints REST (PedidoController)
- ├── model          * entidade Pedido
- ├── repository     * interface PedidoRepository
- └── service        * regras de negócio (PedidoService)
- 
+ ├── controller     # Endpoints REST (PedidoController)
+ ├── model          # Entidade Pedido
+ ├── repository     # Interface PedidoRepository
+ └── service        # Regras de negócio (PedidoService)
+
+
+Princípios aplicados:
+
+SOLID
+
+Separação clara de responsabilidades
+
+DTOs para comunicação (quando necessário)
+
+Controllers enxutos
+
+Services contendo regra de negócio
+
+Repository para persistência (padrão Repository)
+
+📌 Funcionalidades
+
+✔ Listar pedidos
+✔ Buscar pedido por ID
+✔ Criar novo pedido
+✔ Atualizar pedido existente
+✔ Deletar pedido
+
 🔗 Endpoints principais
-1. Listar pedidos
+1️⃣ Listar todos os pedidos
 
 GET /pedidos
-Retorna a lista de pedidos cadastrados.
+Retorna a lista completa de pedidos cadastrados.
 
-2. Criar pedido
-
-POST /pedidos
-Exemplo de corpo:
-
-{
-  "descricao": "Compra de teclado",
-  "valor": 120.00,
-  "status": "PENDENTE"
-}
-
-3. Buscar pedido por ID
+2️⃣ Buscar pedido por ID
 
 GET /pedidos/{id}
 
-4. Atualizar pedido
+Response exemplo:
+
+{
+  "id": 1,
+  "descricao": "Notebook Lenovo",
+  "valor": 4200.0
+}
+
+3️⃣ Criar pedido
+
+POST /pedidos
+Body:
+
+{
+  "descricao": "Mouse Gamer",
+  "valor": 199.90
+}
+
+4️⃣ Atualizar pedido
 
 PUT /pedidos/{id}
+Body:
 
-5. Excluir pedido
+{
+  "descricao": "Mouse Gamer RGB",
+  "valor": 249.90
+}
+
+5️⃣ Deletar pedido
 
 DELETE /pedidos/{id}
 
-🧪 Testes
-
-O projeto contém testes de serviço usando JUnit 5 e Mockito.
-Exemplo de teste: PedidoServiceTest.deveCriarPedidoComSucesso(), validando:
-
-montagem do cenário
-
-chamada ao service
-
-assert dos campos
-
-verificação se o repository foi chamado
-
-🏗️ Como rodar o projeto
-
-1. clonar o repositório
+🛠️ Como rodar o projeto localmente
+1. Clonar o repositório
 git clone https://github.com/BrunoApMarques/pedido-api.git
 cd pedido-api
 
-2. rodar testes
-mvn test
-
-3. subir a aplicação
+2. Rodar com Maven
 mvn spring-boot:run
 
-A API ficará disponível em:
-👉 http://localhost:8080
 
-👤 Autor
+Ou pela IDE (IntelliJ/Eclipse), rodando a classe principal.
+
+3. Acessar os endpoints
+http://localhost:8080/pedidos
+
+📚 Futuras evoluções (roadmap)
+
+Implementar banco de dados H2
+
+Criar validações com Bean Validation
+
+Adicionar testes automatizados
+
+Implementar Swagger/OpenAPI
+
+Criar DTOs específicos para requests/responses
+
+Preparar a API para Docker
+
+👨‍💻 Autor
 
 Bruno Marques
-
-Desenvolvedor Back-end
-
-Campinas – SP
+Desenvolvedor Back-end Java | Spring Boot | APIs REST
+GitHub: https://github.com/BrunoApMarques
 
 LinkedIn: https://linkedin.com/in/bruno-marques-pcd-7a15b8107
 
